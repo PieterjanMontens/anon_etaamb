@@ -1,4 +1,4 @@
-[![WARNING](https://img.shields.io/badge/Maintained%3F-Legacy-orange.svg)](https://shields.io/)
+[![WARNING](https://img.shields.io/badge/Warning-Legacy-orange.svg)](https://shields.io/)
 # Simple, basic dictionnary based depersonalisation component
 *This is legacy code*
 
