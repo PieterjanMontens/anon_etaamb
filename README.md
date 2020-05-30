@@ -1,8 +1,11 @@
+[![WARNING](https://img.shields.io/badge/Maintained%3F-Legacy-orange.svg)](https://shields.io/)
 # Simple, basic dictionnary based depersonalisation component
-This component was in use to depersonalize the content from the Belgian Official Journal from 2011 onwards, as used by [etaamb.be](https://www.etaamb.be)
+*This is legacy code*
+
+This component is used to depersonalize the content from the Belgian Official Journal from 2011 onwards, as used by [etaamb.be](https://www.etaamb.be)
 (though etaamb added multiple pattern-based checks, which this component does not provide).
 
-It has been slightly patched to improve stability and usage in a modern docker environment, but most of it has remained unchanged for the pas 10 years.
+It has been slightly patched to improve stability and usage in a modern docker environment, but most of it has remained unchanged for the past 10 years.
 
 It is meant to be used as a simple demonstrator, and as what can be achieved by simple, naive yet efficient means.
 
