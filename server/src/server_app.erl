@@ -1,10 +1,9 @@
--module(store_app).
+-module(server_app).
 -behaviour(application).
 -export([start/2, stop/1]).
 
 start(_StartType, _StartArgs) ->
-    store_tools:ensure(),
-	case store_sup:start_link() of
+	case server_sup:start_link() of
 		{ok, Pid} -> {ok, Pid};
 		Other	  -> {error, Other}
 	end.

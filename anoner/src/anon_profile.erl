@@ -134,7 +134,7 @@ code_change(_OldVsn, State, _Extra) ->
 
 score(W) ->
 	Scores = [apply(M,score_for,[W]) || M <- get_env(modules)],
-	anon_stat:floor(anon_stat:sum(Scores) / length(Scores)).
+	round(math:floor(anon_stat:sum(Scores) / length(Scores))).
 	%anon_op2:score_for(W).
 	%Scores = [anon_op1:score_for(W), anon_op2:score_for(W)],
 	%anon_stat:floor(anon_stat:sum(Scores) / length(Scores)).

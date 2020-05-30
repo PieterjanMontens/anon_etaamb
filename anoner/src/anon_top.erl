@@ -16,6 +16,7 @@ init([]) ->
 	{ok,{{one_for_one, 5, 60},
 		[{store_pidbarn,{store_pidbarn, start_link,[]},permanent,1000, worker,[store_pidbarn]},
 		 {store_sup,{store_sup,start_link,[]},permanent, 5000, supervisor,[store_sup]},
-		 {anon_sup, {anon_sup, start_link,[]},permanent, 5000, supervisor,[anon_sup]}
+		 {anon_sup, {anon_sup, start_link,[]},permanent, 5000, supervisor,[anon_sup]},
+		 {server_sup, {server_sup, start_link,[]},permanent, 5000, supervisor,[server_sup]}
 		]}}.
 

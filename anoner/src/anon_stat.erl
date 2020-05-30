@@ -5,8 +5,7 @@
 		,mode/1
 		,quantiles/2
 		,sum/1
-		,ceil/1
-		,floor/1]).
+		]).
 
 
 mean(V) ->
@@ -41,7 +40,7 @@ quantiles(V,Q) ->
 		
 	quantiles_get(_, Qtot, Qtot, _, _, Acc) -> lists:reverse(Acc);
 	quantiles_get([H|T], Qtot, Qcur, Pos, Factor, Acc) ->
-		F = ceil(Factor * Qcur),
+		F = round(math:ceil(Factor * Qcur)),
 		if F =:= Pos ->  
 			%io:format("~p = ~p, Q:~p/~p, #~p=~p, F:~p, A:~p~n",
 			%		   [F,Pos,Qcur,Qtot,Pos,H,Factor,Acc]),

@@ -85,7 +85,7 @@ score_make(Pattern) ->
 	io:format("Scores:~p ",[Sc]),
 	Sum = anon_stat:sum(Sc),
 	io:format("Scores:~p Sum:~p~n",[Sc,Sum]),
-	anon_stat:floor(Sum/length(Sc) * 100).
+	round(math:floor(Sum/length(Sc) * 100)).
 
 
 sc_bool(calc_begin, [_Sel|_]) ->
