@@ -50,7 +50,7 @@ Examples:
 ```bash
 $ curl --header "Content-Type: application/json"  --request POST  --data '{"string":"poulet jambon pour Jules crème", "lang":"french"}' http://localhost:8000/sequence_check
 > 100 100 100 0 100
-$ curl -v "http://localhost:8000/check?lang=poulet&word=Jean"
+$ curl -v "http://localhost:8000/check?lang=french&word=immeuble"
 > 100
 ```
 
