@@ -1,0 +1,7 @@
+
+(
+	([zrtpqsdfghjklmwxcvbn]{1,})?[aeyuio]{1,}[zrtpqsdfghjklmwxcvbn]{1,}$
+	|([zrtpqsdfghjklmwxcvbn]{1,})?[aeyuio]{1,}[zrtpqsdfghjklmwxcvbn]{1,}(?=[zrtpqsdfghjklmwxcvbn])
+	|([zrtpqsdfghjklmwxcvbn]{1,})?[aeyuio]{1,}
+)
+

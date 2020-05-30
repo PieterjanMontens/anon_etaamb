@@ -1,0 +1,7 @@
+#!/bin/sh
+erl -make \
+	-pa ebin \
+	-sname anoner@localhost \
+	-cookie FMMCJG-zp98-oaz913-kjsd1414 \
+	-smp enable \
+	-eval "application:start(anoner)."

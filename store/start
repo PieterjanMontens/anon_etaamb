@@ -1,0 +1,7 @@
+#!/bin/sh
+
+erl -make \
+	-pa ebin \
+	-sname store@localhost \
+	-smp enable \
+	-eval "application:start(store)."

@@ -1,0 +1,9 @@
+
+
+{
+	Syllable, // term
+	Count,    // times encountered
+	AtEnd,	  // times at end of word
+	Chains	  // following terms
+}
+	

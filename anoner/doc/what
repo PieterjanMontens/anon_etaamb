@@ -1,0 +1,33 @@
+What does anoner do ? What does it expose ?
+
+Do: 
+    It builds an internal database/profile of a language, maybe even in different, modular ways.
+    It can say, against those profiles, what the probability is of a word to be part of that language.
+    It can also do that with whole texts. It can even return those texts with the less-probable words stripped.
+    Or just return the words of a texts with a lower probablity then a certain given treshold.
+
+Expose:
+    word_add        -> adds a word to a given language profile
+    word_del        -> removes a word from a given language profile
+    word_check      -> sends back the probability of a word peing part of a profile.
+
+    words_check     -> sends back all the given words with their specific probability
+    words_filter    -> sends back only the words below a certain propability level
+
+    text_anonymise  -> sends back text with the most improbable words stripped.
+
+Modules:
+    anoner        User Api
+    anon_app      Application behaviour
+    anon_sup      Root Supervisor
+    anon_profile  Code for a single language profile
+    anon_store    Storage for profile & cache data
+	anon_patterns Code for subpatterns generation and grouping 
+
+Store is started by app file,
+profile is a child of the supervisor, it's an entry point. It also contains al the code to interact with it.
+anoner exposes the functionality to the outside
+
+
+Data format: the data stored by the store is just a key/value pair.
+Nothing more. It shouldn't even know what it's storing, only how.
