@@ -2,17 +2,17 @@
 # Simple, basic dictionnary based anonymization component
 *This is legacy code*
 
-This component is used to anonymize the content from the Belgian Official Journal from 2011 onwards, as used by [etaamb.be](https://www.etaamb.be)
+This component is used to anonymize the content from the Belgian Official Journal, as used by [etaamb.be](https://www.etaamb.be) since 2010
 (though etaamb added multiple pattern-based checks, which this component does not provide).
 
-It has been slightly patched to improve stability and usage in a modern docker environment, but most of it has remained unchanged for the past 10 years.
+It has been slightly patched to improve stability and usage in a modern docker environment, but most of it has remained unchanged for the past 10 years, and is considered **legacy** and **extremely perfectible**.
 
-It is meant to be used as a simple demonstrator, and as what can be achieved by simple, naive yet efficient means.
+It is now meant to be used as a simple demonstrator, and as what can be achieved by simple, naive yet efficient means.
 
 
 ## Usage
-This was also a learning project, the first I built in erlang (and as such does did not include OTP or any other modern toolset), and communicated with PHP through a C module.
-Code is inefficient, and reinvents standard available erlang functionality. It runs on Erlang/OTP 17, and was written under version R12B (yes, it's that old).
+This was above all an early learning project, the first I built in erlang (and as such does did not include OTP or any other modern toolset), and communicated with PHP through a C module.
+Code is inefficient, and reinvents standard available erlang functionality. It runs on Erlang/OTP 17, and was written under version R12B (yes, it's that old, JSON wasn't even a standard back then).
 
 The `start.sh` scripts run both the `store` and `anoner` components.
 
@@ -36,8 +36,8 @@ Recommended usage is: provide space-separted strings of words, and get score bac
 ## 2020 Updates
 ### Added a web server (mochiweb) for querying via HTTP
 Usage:
-- GET / `check` , provide word and lang (dutch or french)
-- POST / `sequence_check`, provide string and lang (dutch or french)
+- GET / `check` , provide `word` and `lang` (dutch or french)
+- POST / `sequence_check`, provide `string` and `lang` (dutch or french)
 
 Mochiweb must be cloned and build in the `server/deps` directory (support verified for OTP version 22)
 ```bash
