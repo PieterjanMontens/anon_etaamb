@@ -48,13 +48,15 @@ $ rebar co
 
 Examples:
 ```bash
-curl --header "Content-Type: application/json"  --request POST  --data '{"string":"poulet jambon pour Jules crème", "lang":"french"}' http://localhost:8000/sequence_check
-curl -v "http://localhost:8000/check?lang=poulet&word=Jean"
+$ curl --header "Content-Type: application/json"  --request POST  --data '{"string":"poulet jambon pour Jules crème", "lang":"french"}' http://localhost:8000/sequence_check
+> 100 100 100 0 100
+$ curl -v "http://localhost:8000/check?lang=poulet&word=Jean"
+> 100
 ```
 
 ### Run with docker
 Using docker erlang:22-slim
 ```bash
-docker build -t "anon" ./  && docker run --rm -it -p8050:8050 anon
+$ docker build -t "anon" ./  && docker run --rm -it -p8050:8050 anon
 ```
 Same curl commands as above can be run to test the service.
