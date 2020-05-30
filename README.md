@@ -32,3 +32,29 @@ Can be interrogated by word or by word list. Returns a "confidence" score for ea
 * `anoner:sequence_check/2`: a more efficient string tokenizer, changes words for score in-place
 
 Recommended usage is: provide space-separted strings of words, and get score back based on word position, using the `sequence_check/2/ function.
+
+## 2020 Updates
+### Added a web server (mochiweb) for querying via HTTP
+Usage:
+- GET / `check` , provide word and lang (dutch or french)
+- POST / `sequence_check`, provide string and lang (dutch or french)
+
+Mochiweb must be cloned and build in the `server/deps` directory (support verified for OTP version 22)
+```bash
+$ git clone --depth=1 https://github.com/mochi/mochiweb.git server/deps/mochiweb
+$ cd server/deps/mochiweb
+$ rebar co
+```
+
+Examples:
+```bash
+curl --header "Content-Type: application/json"  --request POST  --data '{"string":"poulet jambon pour Jules crème", "lang":"french"}' http://localhost:8000/sequence_check
+curl -v "http://localhost:8000/check?lang=poulet&word=Jean"
+```
+
+### Run with docker
+Using docker erlang:22-slim
+```bash
+docker build -t "anon" ./  && docker run --rm -it -p8000:8000 anon
+```
+Same curl commands as above can be run to test the service.
