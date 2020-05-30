@@ -55,6 +55,6 @@ curl -v "http://localhost:8000/check?lang=poulet&word=Jean"
 ### Run with docker
 Using docker erlang:22-slim
 ```bash
-docker build -t "anon" ./  && docker run --rm -it -p8000:8000 anon
+docker build -t "anon" ./  && docker run --rm -it -p8050:8050 anon
 ```
 Same curl commands as above can be run to test the service.

@@ -37,10 +37,10 @@ upgrade() ->
 %% @doc supervisor callback.
 init([]) ->
     %Port = case os:getenv("port") of false -> 8000; _Port -> _Port end,
-    io:format("~n-- Server started"),
-    Port = case application:get_env(server,port) of undefined -> 8000; {ok,_Port} -> _Port end,
+    Port = case application:get_env(anoner,port) of undefined -> 8000; {ok,_Port} -> _Port end,
     Ip = case os:getenv("MOCHIWEB_IP") of false -> "0.0.0.0"; Any -> Any end,
     WebConfig = [ {ip, Ip}, {port, Port} ],
+    io:format("~n-- Server started: ~p", [WebConfig]),
     Web = {server,
            {server, start, [WebConfig]},
            permanent, 5000, worker, dynamic},
