@@ -16,5 +16,5 @@ RUN ./rebar co
 WORKDIR /buildroot
 EXPOSE 8050
 
-CMD ["tail", "-f", "/dev/null"]
-# CMD ["./start.sh"]
+# CMD ["tail", "-f", "/dev/null"]
+CMD ["./start.sh"]
