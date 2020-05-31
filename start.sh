@@ -13,4 +13,5 @@ erl -pa store/ebin \
 	-sname anoner@localhost \
 	-smp enable \
 	-config ./conf.config \
+    -noshell \
 	-eval "application:start(anoner)."
