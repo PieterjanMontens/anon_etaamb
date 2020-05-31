@@ -14,6 +14,7 @@ RUN git clone --depth=1 https://github.com/mochi/mochiweb.git server/deps/mochiw
 WORKDIR /buildroot/server/deps/mochiweb
 RUN ./rebar co
 WORKDIR /buildroot
+EXPOSE 8050
 
 CMD ["tail", "-f", "/dev/null"]
 # CMD ["./start.sh"]
