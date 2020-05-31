@@ -1,7 +1,7 @@
 FROM erlang:22-slim
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git ca-certificates
+    && apt-get install -y --no-install-recommends git ca-certificates watch
 
 RUN mkdir /buildroot
 WORKDIR /buildroot
@@ -15,5 +15,5 @@ WORKDIR /buildroot/server/deps/mochiweb
 RUN ./rebar co
 WORKDIR /buildroot
 
-CMD ["sh", "-c", "bash"]
+CMD ["watch", "-n10", "top"]
 # CMD ["./start.sh"]
