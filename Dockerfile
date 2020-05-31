@@ -15,4 +15,5 @@ WORKDIR /buildroot/server/deps/mochiweb
 RUN ./rebar co
 WORKDIR /buildroot
 
-CMD ["./start.sh"]
+CMD ["bash"]
+# CMD ["./start.sh"]
