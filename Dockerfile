@@ -15,5 +15,5 @@ WORKDIR /buildroot/server/deps/mochiweb
 RUN ./rebar co
 WORKDIR /buildroot
 
-CMD ["watch", "-n10", "top"]
+CMD ["tail", "-f", "/dev/null"]
 # CMD ["./start.sh"]
