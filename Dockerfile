@@ -23,8 +23,5 @@ RUN erl -make
 WORKDIR /buildroot/store
 RUN erl -make
 
-# CMD ["tail", "-f", "/dev/null"]
-# CMD ["./start.sh"]
 WORKDIR /buildroot/
-# CMD ["./start.sh", ";", "tail", "-f", "/dev/null"]
 CMD ["./start.sh"]
