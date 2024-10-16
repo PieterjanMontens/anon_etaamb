@@ -44,7 +44,7 @@ version=$1; shift
 
 case "$subcommand" in
   build)
-    docker build -t berzemus/anon-etaamb:${version}  -f ./Dockerfile --no-cache .
+    docker build -t berzemus/anon-etaamb:${version}  -f ./Dockerfile .
     ;;
 
   test)
