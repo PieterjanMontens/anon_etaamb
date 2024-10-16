@@ -5,6 +5,7 @@ while getopts ":h" opt; do
       echo "Usage:"
       echo "    docker-tool.sh -h        Display this help message."
       echo "    docker-tool.sh build <VERSION>    Builds image"
+      echo "    docker-tool.sh exec               Build and run image"
       echo "    docker-tool.sh test <VERSION>    Tests image"
       echo "    docker-tool.sh publish <VERSION>  Publishes image to Docker Hub"
       echo "    docker-tool.sh latest <VERSION>  Tags images as latest on Docker Hub."
@@ -44,7 +45,11 @@ version=$1; shift
 
 case "$subcommand" in
   build)
-    docker build -t berzemus/anon-etaamb:${version}  -f ./Dockerfile --no-cache .
+    docker build -t berzemus/anon-etaamb:${version}  -f ./Dockerfile .
+    ;;
+
+  exec)
+    docker run --rm -it $(docker build  -q -f ./Dockerfile .)
     ;;
 
   test)

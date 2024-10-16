@@ -12,7 +12,7 @@ COPY ./start.sh start.sh
 COPY ./conf.config conf.config
 RUN git clone --depth=1 https://github.com/mochi/mochiweb.git server/deps/mochiweb
 WORKDIR /buildroot/server/deps/mochiweb
-RUN ./rebar co
+RUN rebar3 compile
 WORKDIR /buildroot
 EXPOSE 8050
 
