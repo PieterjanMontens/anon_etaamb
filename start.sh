@@ -9,9 +9,8 @@ cd ..
 erl -pa store/ebin \
 	-pa anoner/ebin \
 	-pa server/ebin \
-	-pa server/deps/mochiweb/ebin \
+    -pa server/deps/mochiweb/_build/default/lib/mochiweb/ebin \
 	-sname anoner@localhost \
 	-smp enable \
 	-config ./conf.config \
-    -noshell \
 	-eval "application:start(anoner)."
